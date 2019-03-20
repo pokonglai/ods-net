@@ -3,8 +3,8 @@ def get_training_config():
     hyper_params = {}
     hyper_params["batch_size"] = 4 # number of images passed into the network, increasing this requires more GPU memory
     hyper_params["epochs"] = 40 # number of steps to run
-    hyper_params["batches_per_epoch"] = 5000 # number of batch_size inputs before an epoch is completed
-    hyper_params["batches_per_val_run"] = 1000 # number of batch_size validation checks before we're done with a single validation step after the training step in an epoch
+    hyper_params["batches_per_epoch"] = 10 #5000 # number of batch_size inputs before an epoch is completed
+    hyper_params["batches_per_val_run"] = 10 #1000 # number of batch_size validation checks before we're done with a single validation step after the training step in an epoch
 
     ## input image dimensions for ONet
     hyper_params["img_rows"] = 128

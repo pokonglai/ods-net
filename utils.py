@@ -110,3 +110,12 @@ def split_folder(inputPath, outputPath, nFolders):
         print_text_progress_bar((i+1)/len(blocks))
     print()
             
+
+if __name__ == '__main__':
+    subsetname = "sample_val"
+    filelist = listfiles_nohidden("./data/"+subsetname+"/", includeInputPath=False)
+    print(filelist)
+
+    txt_file = open("./data/"+subsetname+".txt", "w")
+    for f in filelist: txt_file.write(subsetname + " " + f+"\n")
+    txt_file.close()

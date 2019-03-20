@@ -23,7 +23,6 @@ def load_filelist(top_folder, fname, shuffle_flist=True):
 
     ret_fpaths = []
     for L in lines:
-
         subset_name, h5_fname = L.split()
         ret_fpaths.append(os.path.join(top_folder, subset_name, h5_fname))
 

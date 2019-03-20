@@ -361,12 +361,15 @@ def train_with_multibatch():
     hyper_params = get_training_config()
     input_shape = (hyper_params["img_rows"], hyper_params["img_cols"], 3)
 
-    str_model_name = "ODS_Net" ## regular SepUNet 
-    # str_model_name = "ODS_Net_borderloss" ## with the Lpano loss function
+    # str_model_name = "ODS_Net" ## regular SepUNet 
+    str_model_name = "ODS_Net_borderloss" ## with the Lpano loss function
 
     strTopFolder = "./data/" # input folder containing file lists
-    fpaths_train = load_filelist(strTopFolder, "all_areas_train_v2.txt")
-    fpaths_val = load_filelist(strTopFolder, "all_areas_val_v2.txt")
+    # fpaths_train = load_filelist(strTopFolder, "all_areas_train_v2.txt") # actual file list fot training
+    # fpaths_val = load_filelist(strTopFolder, "all_areas_val_v2.txt")
+
+    fpaths_train = load_filelist(strTopFolder, "sample_train.txt") # small sample of data to demo the code
+    fpaths_val = load_filelist(strTopFolder, "sample_val.txt")
 
     strOutputModelPath = "./training_output/" # folder that will we dump log files and trained models which were saved according to save_period in hyper_params
     
