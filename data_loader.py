@@ -23,9 +23,12 @@ def load_filelist(top_folder, fname, shuffle_flist=True):
 
     ret_fpaths = []
     for L in lines:
+
         # subset_name, h5_fname = L.split()
         # ret_fpaths.append(os.path.join(top_folder, subset_name, h5_fname))
 
+        # assumes that each line is a full path to the .h5 files
+        # edit this if the data is stored in a location which is not part of the paths from the input file list
         ret_fpaths.append(L.strip())
 
     if shuffle_flist: random.shuffle(ret_fpaths) ## shuffle so that we do not go through an entire area of images before reaching another area

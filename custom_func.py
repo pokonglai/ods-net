@@ -48,9 +48,7 @@ def berHu_loss_elementwise_w_border(y_true, y_pred):
     n_border_pixels = tf.to_float(tf.size(border_berHu_vals))
     berHu_border = K.sum(border_berHu_vals) / n_border_pixels
 
-    lambda_frac = 0.5 # default paper amount
-    # lambda_frac = 2.0 
-    # lambda_frac = 20.0
+    lambda_frac = 0.5 # default amount for the weight matrix
     ret_loss = berHu_overall + lambda_frac*berHu_border 
 
     return ret_loss

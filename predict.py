@@ -119,9 +119,6 @@ def predict_from_hdf5_images():
         plt.imsave(os.path.join(strOutputPath,'img_norm_pred.png'), ( (pred_normals+1.0)  *128).astype(np.uint8))
 
 
-        
-
-
         ## output the point clouds for the prediction and the ground truth
         ## use the ground truth color image of the center camera to have the ideal alignment from color to depth map
         ptcloud_gt, npoints_gt = images_to_omni_pointcloud_equi_rectangular(img_L, img_D)

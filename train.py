@@ -198,11 +198,6 @@ class KerasModel_DataInBatches:
                     for am in acc_measures:
                         str_acc += output_layer_shortnames[l]+"_"+acc_measures_shortnames[am]+"=" +"{:5.6f}".format(latest_acc_train[l+"_"+am]) + " "
 
-                # td, th, tm, ts = time_in_seconds_to_d_h_m_s(batch_elapsed_time)
-                # str_time = str(int(th)) + "h - " + str(int(tm)) + "m - " + "{:3.2f}".format(ts)+"s        " # extra spaces to erase the extra chars at the end if the string is shorter
-
-                # loss_msg = "  [ "+str_loss+"]+[ "+str_acc+"] >> time = " + str_time
-
                 td, th, tm, ts = time_in_seconds_to_d_h_m_s(batch_elapsed_time) ## total elapsed time for training only
                 str_time = str(int(th)) + "h - " + str(int(tm)) + "m - " + "{:3.2f}".format(ts)+"s" 
 
@@ -234,7 +229,7 @@ class KerasModel_DataInBatches:
                 ## evaluate this batch
                 eval_score = self.model.evaluate(x_test, y_test, verbose=0)
 
-                ## ONet.metrics_names --> ['loss', 'depth_map_loss', 'normal_map_loss', 'depth_map_rmse', 'normal_map_rmse']
+                ## ODSNet.metrics_names --> ['loss', 'depth_map_loss', 'normal_map_loss', 'depth_map_rmse', 'normal_map_rmse']
                 # print(self.model.metrics_names)
                 # print(eval_score)
                 for eval_idx in range(len(self.model.metrics_names)):
@@ -259,11 +254,6 @@ class KerasModel_DataInBatches:
                     str_loss += output_layer_shortnames[l]+"_loss=" + "{:5.6f}".format(latest_loss_val[l+"_loss"]) + " "
                     for am in acc_measures:
                         str_acc += output_layer_shortnames[l]+"_"+acc_measures_shortnames[am]+"=" +"{:5.6f}".format(latest_acc_val[l+"_"+am]) + " "
-
-                # td, th, tm, ts = time_in_seconds_to_d_h_m_s(batch_elapsed_time)
-                # str_time = str(int(th)) + "h - " + str(int(tm)) + "m - " + "{:3.2f}".format(ts)+"s        " # extra spaces to erase the extra chars at the end if the string is shorter
-                # acc_msg = "  [ "+str_loss+"]+[ "+str_acc+"] >> time = " + str_time
-
 
                 td, th, tm, ts = time_in_seconds_to_d_h_m_s(batch_elapsed_time) ## total elapsed time for training only
                 str_time = str(int(th)) + "h - " + str(int(tm)) + "m - " + "{:3.2f}".format(ts)+"s" 
