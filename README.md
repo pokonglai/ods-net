@@ -18,7 +18,7 @@ Pre-trained weights for using ```predict.py``` can be found in the link above. A
 
 If you use significant portions of our code or ideas from our paper in your research, please cite our work:
 ```
-@article{lai2019pano,
+@inproceedings{lai2019pano,
   title={Real-time panoramic depth maps from omni-directional stereo images for 6 DoF videos in virtual reality},
   author={Lai, Po Kong and Xie, Shuang and Lang, Jochen and Laganière, Robert},
   booktitle={2019 IEEE Virtual Reality (VR)},
