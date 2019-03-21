@@ -7,14 +7,6 @@ import scipy.io
 
 from utils import *
 
-import OpenEXR
-
-import matplotlib.pyplot as plt
-
-
-from joblib import Parallel, delayed
-import multiprocessing
-
 
 def normalize(v):
     norm = np.linalg.norm(v)
@@ -140,6 +132,9 @@ def images_to_omni_pointcloud_equi_rectangular(img_color, img_depth, hasNormals=
             depth_val = img_depth[h, w]
             # b, g, r = img_color[h, w]
             r, g, b = img_color[h, w]
+            r = (int)(255*r)
+            g = (int)(255*g)
+            b = (int)(255*b)
 
             w_ratio = w/img_w # width is the longitude
             w_angle = np.deg2rad(w_ratio*360)
