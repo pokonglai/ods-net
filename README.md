@@ -1,7 +1,9 @@
 # Panoramic depth maps from omni-directional stereo (ODS) images
-This repo is the official implementation of the paper *"Real-time panoramic depth maps from omni-directional stereo images for 6 DoF videos in virtual reality"* which predicts a panoramic depth map from a pair of ODS images taken from 3D 360&deg; sensors.
+This repo is the official implementation of the paper *"Real-time panoramic depth maps from omni-directional stereo images for 6 DoF videos in virtual reality"* which predicts a panoramic depth map from a pair of ODS images taken from 3D 360&deg; sensors. These depth maps can then be used to produce 6 degrees of freedom (DoF) videos for viewing in virtual reality.
 
 This work was presented at [IEEE VR 2019](http://ieeevr.org/2019/).
+
+![Overview of approach](DemoHeaderImage.png?raw=true "Overview of approach for 6 DoF video")
 
 # Getting started
 
